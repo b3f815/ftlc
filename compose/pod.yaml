@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: fortheloveofcinema
+spec:
+  containers: 
+    - name: frontend
+      image: node:0.2
+      ports:
+      - containerPort: 8000
+    - name: backend-api
+      image: node:0.2
+      ports:
+      - containerport: 8001

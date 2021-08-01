@@ -1,0 +1,21 @@
+version: "2.0"
+services:
+ backend-api:
+ 	build: '.'
+	command: bash -c "cd /mnt/backend-api && node index.js"
+	ports:
+	- "8001:8001"
+	volumes:
+	- /home/befin/fortheloveofcinema/backend-api:"cd /mnt/backend-api && node index.js"
+	tty: true
+ frontend:
+	build: '.'
+	command: bash -c "cd /mnt/frontend && node index.js"
+	ports:
+	- "8000:8000"
+	volumes:
+	- /home/befin/fortheloveofcinema/frontend:"cd /mnt/frontend && node index.js"
+	links:
+	- backend-api
+	tty: true
+

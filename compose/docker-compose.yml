@@ -1,0 +1,14 @@
+version: "2.0"
+services:
+  backend-api:
+    build: ../backend-api/
+    command: bash -c "cd /usr/src/backend-api"
+    
+    tty: true
+  frontend:
+    build: ../frontend/
+    
+        
+    links:
+    - backend-api
+    tty: true
